@@ -1,0 +1,3 @@
+trx-date --> TimeStamp
+product-description --> setServiceName
+total-amount --> Charge

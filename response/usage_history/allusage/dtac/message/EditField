@@ -1,0 +1,3 @@
+ratedProductUsage.ratingDate --> timeStamp
+ratedProductUsage.taxIncludedRatingAmount.value --> charge
+CalledPartyNumb --> duration

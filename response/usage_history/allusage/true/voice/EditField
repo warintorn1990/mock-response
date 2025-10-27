@@ -1,0 +1,4 @@
+endTime --> timeStamp
+duration --> duration
+chargeAmt --> charge
+roamInd --> ถ้าค่าเป็น HOME จะเท่ากับ N ถ้าไม่ใช่จะเป็น Y

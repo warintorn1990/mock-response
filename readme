@@ -1,0 +1,17 @@
+# install lib
+pip install fastapi uvicorn
+
+# Run Program
+uvicorn main:app --reload --host 0.0.0.0 --port 80
+
+# Dowload ngrok mac-os
+https://ngrok.com/downloads/mac-os
+
+# Dowload ngrok windows
+https://ngrok.com/downloads/windows
+
+# Set Endpoint
+${HOSTING}/usageManagement/v1/usage
+
+
+

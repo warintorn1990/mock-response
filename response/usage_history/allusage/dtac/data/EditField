@@ -1,0 +1,4 @@
+ratedProductUsage.ratingDate --> timeStamp
+usageCharacteristic.TotalFlux--> volume
+taxIncludedRatingAmount.value --> charge
+usageCharacteristic.ElapseDuration -->duration

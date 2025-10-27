@@ -1,0 +1,3 @@
+ratedProductUsage.ratingDate --> timeStamp
+usageCharacteristic.CalledPartyNumb --> destNumber
+ratedProductUsage.TaxIncludedRatingAmount.value --> charge

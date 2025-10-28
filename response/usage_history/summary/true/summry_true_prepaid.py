@@ -17,6 +17,14 @@ SUMMARY_TRUE_DATA_PREPAID = {
                     {
                         "month": "Jul",
                         "total": "221"
+                    },
+                    {
+                        "month": "Aug",
+                        "total": "221"
+                    },
+                    {
+                        "month": "Sep",
+                        "total": "221"
                     }
                 ]
             ],
@@ -32,6 +40,14 @@ SUMMARY_TRUE_DATA_PREPAID = {
                     {
                         "month": "Jul",
                         "total": "108.5"
+                    },
+                    {
+                        "month": "Aug",
+                        "total": "108.5"
+                    },
+                    {
+                        "month": "Sep",
+                        "total": "108.5"
                     }
                 ]
             ],
@@ -46,6 +62,14 @@ SUMMARY_TRUE_DATA_PREPAID = {
                 [
                     {
                         "month": "Jul",
+                        "total": "48"
+                    },
+                    {
+                        "month": "Aug",
+                        "total": "50"
+                    },
+                    {
+                        "month": "Sep",
                         "total": "48"
                     }
                 ]

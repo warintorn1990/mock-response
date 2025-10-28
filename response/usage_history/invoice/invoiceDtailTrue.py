@@ -64,7 +64,7 @@ INVOICE_DETAIL_TRUE = {
             "restrictionTaxAmount": "0.00",
             "periodCvrgStartDate": "2013-03-10T00:00:00.000+07:00",
             "periodCvrgEndDate": "2013-04-02T00:00:00.000+07:00",
-            "chargeCode": null,
+            "chargeCode": None,
             "designationCode": "OENTRY"
         },
         {
@@ -128,7 +128,7 @@ INVOICE_DETAIL_TRUE = {
             "restrictionTaxAmount": "0.00",
             "periodCvrgStartDate": "2013-03-10T00:00:00.000+07:00",
             "periodCvrgEndDate": "2013-04-02T00:00:00.000+07:00",
-            "chargeCode": null,
+            "chargeCode": None,
             "designationCode": "OENTRY"
         },
         {
@@ -192,7 +192,7 @@ INVOICE_DETAIL_TRUE = {
             "restrictionTaxAmount": "0.00",
             "periodCvrgStartDate": "2013-03-10T00:00:00.000+07:00",
             "periodCvrgEndDate": "2013-04-02T00:00:00.000+07:00",
-            "chargeCode": null,
+            "chargeCode": None,
             "designationCode": "OENTRY"
         },
         {
@@ -256,7 +256,7 @@ INVOICE_DETAIL_TRUE = {
             "restrictionTaxAmount": "0.00",
             "periodCvrgStartDate": "2013-03-10T00:00:00.000+07:00",
             "periodCvrgEndDate": "2013-04-02T00:00:00.000+07:00",
-            "chargeCode": null,
+            "chargeCode": None,
             "designationCode": "OENTRY"
         }
     ]

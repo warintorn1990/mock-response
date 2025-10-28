@@ -17,4 +17,5 @@ BEGIN
     UPDATE common_service_endpoint
     SET srv_endpoint_url = mock_url || '/v2/invoiceDetail'
     WHERE srv_name = 'InvoiceDetail';
+
 END $$;

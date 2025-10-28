@@ -10,8 +10,5 @@ https://ngrok.com/downloads/mac-os
 # Dowload ngrok windows
 https://ngrok.com/downloads/windows
 
-# Set Endpoint
-${HOSTING}/usageManagement/v1/usage
-
 
 

@@ -1,35 +1,36 @@
 from fastapi import FastAPI, Request, Response
 from datetime import datetime
 
-from response.usage_history.allusage.true.voice.true_voice_postpaid_3 import TRUE_VOICE_POSTPAID_3 
-from response.usage_history.allusage.true.voice.true_voice_postpaid_4 import TRUE_VOICE_POSTPAID_4
-from response.usage_history.allusage.true.voice.true_voice_postpaid_5 import TRUE_VOICE_POSTPAID_5
-from response.usage_history.allusage.true.voice.true_voice_postpaid_6 import TRUE_VOICE_POSTPAID_6
+from response.usage_history.allusage.true.voice.true_voice_postpaid_7 import TRUE_VOICE_POSTPAID_7 
+from response.usage_history.allusage.true.voice.true_voice_postpaid_8 import TRUE_VOICE_POSTPAID_8
+from response.usage_history.allusage.true.voice.true_voice_postpaid_9 import TRUE_VOICE_POSTPAID_9
+from response.usage_history.allusage.true.voice.true_voice_postpaid_10 import TRUE_VOICE_POSTPAID_10
 
-from response.usage_history.allusage.true.message.true_message_postpaid_3 import TRUE_MESSAGE_POSTPAID_3
-from response.usage_history.allusage.true.message.true_message_postpaid_4 import TRUE_MESSAGE_POSTPAID_4
-from response.usage_history.allusage.true.message.true_message_postpaid_5 import TRUE_MESSAGE_POSTPAID_5
-from response.usage_history.allusage.true.message.true_message_postpaid_6 import TRUE_MESSAGE_POSTPAID_6
+from response.usage_history.allusage.true.message.true_message_postpaid_7 import TRUE_MESSAGE_POSTPAID_7
+from response.usage_history.allusage.true.message.true_message_postpaid_8 import TRUE_MESSAGE_POSTPAID_8
+from response.usage_history.allusage.true.message.true_message_postpaid_9 import TRUE_MESSAGE_POSTPAID_9
+from response.usage_history.allusage.true.message.true_message_postpaid_10 import TRUE_MESSAGE_POSTPAID_10
 
-from response.usage_history.allusage.true.vas.true_vas_postpaid_3 import TRUE_VAS_POSTPAID_3
-from response.usage_history.allusage.true.vas.true_vas_postpaid_4 import TRUE_VAS_POSTPAID_4
-from response.usage_history.allusage.true.vas.true_vas_postpaid_5 import TRUE_VAS_POSTPAID_5
-from response.usage_history.allusage.true.vas.true_vas_postpaid_6 import TRUE_VAS_POSTPAID_6
+from response.usage_history.allusage.true.vas.true_vas_postpaid_7 import TRUE_VAS_POSTPAID_7
+from response.usage_history.allusage.true.vas.true_vas_postpaid_8 import TRUE_VAS_POSTPAID_8
+from response.usage_history.allusage.true.vas.true_vas_postpaid_9 import TRUE_VAS_POSTPAID_9
+from response.usage_history.allusage.true.vas.true_vas_postpaid_10 import TRUE_VAS_POSTPAID_10
 
-from response.usage_history.allusage.dtac.data.dtac_postpaid_data_3 import DTAC_DATA_POSTPAID_3
-from response.usage_history.allusage.dtac.data.dtac_postpaid_data_4 import DTAC_DATA_POSTPAID_4  
-from response.usage_history.allusage.dtac.data.dtac_postpaid_data_5 import DTAC_DATA_POSTPAID_5
-from response.usage_history.allusage.dtac.data.dtac_postpaid_data_6 import DTAC_DATA_POSTPAID_6
+from response.usage_history.allusage.dtac.data.dtac_postpaid_data_7 import DTAC_DATA_POSTPAID_7
+from response.usage_history.allusage.dtac.data.dtac_postpaid_data_8 import DTAC_DATA_POSTPAID_8  
+from response.usage_history.allusage.dtac.data.dtac_postpaid_data_9 import DTAC_DATA_POSTPAID_9
+from response.usage_history.allusage.dtac.data.dtac_postpaid_data_10 import DTAC_DATA_POSTPAID_10
 
-from response.usage_history.allusage.dtac.voice.dtac_voice_postpaid_3 import DTAC_VOICE_POSTPAID_3
-from response.usage_history.allusage.dtac.voice.dtac_voice_postpaid_4 import DTAC_VOICE_POSTPAID_4
-from response.usage_history.allusage.dtac.voice.dtac_voice_postpaid_5 import DTAC_VOICE_POSTPAID_5
-from response.usage_history.allusage.dtac.voice.dtac_voice_postpaid_6 import DTAC_VOICE_POSTPAID_6
+from response.usage_history.allusage.dtac.voice.dtac_voice_postpaid_7 import DTAC_VOICE_POSTPAID_7
+from response.usage_history.allusage.dtac.voice.dtac_voice_postpaid_8 import DTAC_VOICE_POSTPAID_8
+from response.usage_history.allusage.dtac.voice.dtac_voice_postpaid_9 import DTAC_VOICE_POSTPAID_9
+from response.usage_history.allusage.dtac.voice.dtac_voice_postpaid_10 import DTAC_VOICE_POSTPAID_10
 
-from response.usage_history.allusage.dtac.message.dtac_message_postpaid_3 import DTAC_MESSAGE_POSTPAID_3
-from response.usage_history.allusage.dtac.message.dtac_message_postpaid_4 import DTAC_MESSAGE_POSTPAID_4
-from response.usage_history.allusage.dtac.message.dtac_message_postpaid_5 import DTAC_MESSAGE_POSTPAID_5
-from response.usage_history.allusage.dtac.message.dtac_message_postpaid_6 import DTAC_MESSAGE_POSTPAID_6
+from response.usage_history.allusage.dtac.message.dtac_message_postpaid_7 import DTAC_MESSAGE_POSTPAID_7
+from response.usage_history.allusage.dtac.message.dtac_message_postpaid_8 import DTAC_MESSAGE_POSTPAID_8
+from response.usage_history.allusage.dtac.message.dtac_message_postpaid_9 import DTAC_MESSAGE_POSTPAID_9
+from response.usage_history.allusage.dtac.message.dtac_message_postpaid_10 import DTAC_MESSAGE_POSTPAID_10
+
 from response.usage_history.summary.dtac.summary_dtac_prepaid_6 import SUMMARY_DTAC_PREPAID_6
 from response.usage_history.summary.dtac.summary_dtac_prepaid_7 import SUMMARY_DTAC_PREPAID_7
 from response.usage_history.summary.dtac.summary_dtac_prepaid_8 import SUMMARY_DTAC_PREPAID_8
@@ -120,68 +121,68 @@ async def list_allusage(request: Request, response: Response):
     if channel == "True": 
         if serviceType == "CALLING":
             response.headers["X-Total-Count"] = "10"
-            if cycleInstanse == "3":
-                return TRUE_VOICE_POSTPAID_3
-            if cycleInstanse == "4":
-                return TRUE_VOICE_POSTPAID_4
-            if cycleInstanse == "5":
-                return TRUE_VOICE_POSTPAID_5
-            if cycleInstanse == "6":
-                return TRUE_VOICE_POSTPAID_6
+            if cycleInstanse == "7":
+                return TRUE_VOICE_POSTPAID_7
+            if cycleInstanse == "8":
+                return TRUE_VOICE_POSTPAID_8
+            if cycleInstanse == "9":
+                return TRUE_VOICE_POSTPAID_9
+            if cycleInstanse == "10":
+                return TRUE_VOICE_POSTPAID_10
             
         elif serviceType == "SMS":
             response.headers["X-Total-Count"] = "10"
-            if cycleInstanse == "3":
-                return TRUE_MESSAGE_POSTPAID_3
-            if cycleInstanse == "4":
-                return TRUE_MESSAGE_POSTPAID_4
-            if cycleInstanse == "5":
-                return TRUE_MESSAGE_POSTPAID_5
-            if cycleInstanse == "6":
-                return TRUE_MESSAGE_POSTPAID_6
+            if cycleInstanse == "7":
+                return TRUE_MESSAGE_POSTPAID_7
+            if cycleInstanse == "8":
+                return TRUE_MESSAGE_POSTPAID_8
+            if cycleInstanse == "9":
+                return TRUE_MESSAGE_POSTPAID_9
+            if cycleInstanse == "10":
+                return TRUE_MESSAGE_POSTPAID_10
         
         elif serviceType == "DCB":
             startDateTime = query_dict.get("startDateTime")
             dt = datetime.fromisoformat(startDateTime)
             month = dt.month
             response.headers["X-Total-Count"] = "3"
-            if month == 3:
-                return TRUE_VAS_POSTPAID_3
-            if month == 4:
-                return TRUE_VAS_POSTPAID_4
-            if month == 5:
-                return TRUE_VAS_POSTPAID_5
-            if month == 6:
-                return TRUE_VAS_POSTPAID_6
+            if month == 7:
+                return TRUE_VAS_POSTPAID_7
+            if month == 8:
+                return TRUE_VAS_POSTPAID_8
+            if month == 9:
+                return TRUE_VAS_POSTPAID_9
+            if month == 10:
+                return TRUE_VAS_POSTPAID_10
         
     else:
         response.headers["X-Total-Count"] = "3"
         if usageType=="7":
-            if usageDate == "20250311":
-                return DTAC_VOICE_POSTPAID_3
-            elif usageDate == "20250411":
-                return DTAC_VOICE_POSTPAID_4
-            elif usageDate == "20250511":
-                return DTAC_VOICE_POSTPAID_5
-            elif usageDate == "20250611":
-                return DTAC_VOICE_POSTPAID_6
+            if usageDate == "20250711":
+                return DTAC_VOICE_POSTPAID_7
+            elif usageDate == "20250811":
+                return DTAC_VOICE_POSTPAID_8
+            elif usageDate == "20250911":
+                return DTAC_VOICE_POSTPAID_9
+            elif usageDate == "20251011":
+                return DTAC_VOICE_POSTPAID_10
             
         elif usageType=="2":
-            if usageDate == "20250311":
-                return DTAC_DATA_POSTPAID_3
-            elif usageDate == "20250411":
-                return DTAC_DATA_POSTPAID_4
-            elif usageDate == "20250511":
-                return DTAC_DATA_POSTPAID_5
-            elif usageDate == "20250611":
-                return DTAC_DATA_POSTPAID_6
+            if usageDate == "20250711":
+                return DTAC_DATA_POSTPAID_7
+            elif usageDate == "20250811":
+                return DTAC_DATA_POSTPAID_8
+            elif usageDate == "20250911":
+                return DTAC_DATA_POSTPAID_9
+            elif usageDate == "20251011":
+                return DTAC_DATA_POSTPAID_10
         
         elif usageType=="5,9":
-            if usageDate == "20250311":
-                return DTAC_MESSAGE_POSTPAID_3
-            elif usageDate == "20250411":
-                return DTAC_MESSAGE_POSTPAID_4
-            elif usageDate == "20250511":
-                return DTAC_MESSAGE_POSTPAID_5
-            elif usageDate == "20250611":
-                return DTAC_MESSAGE_POSTPAID_6
+            if usageDate == "20250711":
+                return DTAC_MESSAGE_POSTPAID_7
+            elif usageDate == "20250811":
+                return DTAC_MESSAGE_POSTPAID_8
+            elif usageDate == "20250911":
+                return DTAC_MESSAGE_POSTPAID_9
+            elif usageDate == "20251011":
+                return DTAC_MESSAGE_POSTPAID_10

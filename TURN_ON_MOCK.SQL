@@ -1,6 +1,6 @@
 DO $$
 DECLARE
-    mock_url TEXT := 'http://localhost';
+    mock_url TEXT := 'https://08363a6d39ec.ngrok-free.app';
 BEGIN
     UPDATE common_service_endpoint
     SET srv_endpoint_url = mock_url || '/usageConsumptionReport/{id}'
@@ -19,3 +19,4 @@ BEGIN
     WHERE srv_name = 'InvoiceDetail';
 
 END $$;
+

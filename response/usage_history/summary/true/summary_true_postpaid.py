@@ -20,7 +20,7 @@ SUMMARY_TRUE_DATA_POSTPAID = {
                     },
                     {
                         "month": "Aug",
-                        "total": "500"
+                        "total": "300"
                     },
                     {
                         "month": "Sep",

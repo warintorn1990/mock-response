@@ -49,6 +49,22 @@ from response.qryBalance import QRY_BALANCE
 from response.usage_history.invoice.invoiceDtailDtac import INVOICE_DETAIL_DTAC
 from response.usage_history.invoice.invoiceDtailTrue import INVOICE_DETAIL_TRUE
 
+from response.usage_history.allusage.dtac.data.dtac_prepaid_data_7 import DTAC_DATA_PREPAID_7
+from response.usage_history.allusage.dtac.data.dtac_prepaid_data_8 import DTAC_DATA_PREPAID_8
+from response.usage_history.allusage.dtac.data.dtac_prepaid_data_9 import DTAC_DATA_PREPAID_9
+from response.usage_history.allusage.dtac.data.dtac_prepaid_data_10 import DTAC_DATA_PREPAID_10
+
+from response.usage_history.allusage.dtac.voice.dtac_voice_prepaid_7 import DTAC_VOICE_PREPAID_7
+from response.usage_history.allusage.dtac.voice.dtac_voice_prepaid_8 import DTAC_VOICE_PREPAID_8
+from response.usage_history.allusage.dtac.voice.dtac_voice_prepaid_9 import DTAC_VOICE_PREPAID_9
+from response.usage_history.allusage.dtac.voice.dtac_voice_prepaid_10 import DTAC_VOICE_PREPAID_10
+
+from response.usage_history.allusage.dtac.message.dtac_message_prepaid_7 import DTAC_MESSAGE_PREPAID_7
+from response.usage_history.allusage.dtac.message.dtac_message_prepaid_8 import DTAC_MESSAGE_PREPAID_8
+from response.usage_history.allusage.dtac.message.dtac_message_prepaid_9 import DTAC_MESSAGE_PREPAID_9
+from response.usage_history.allusage.dtac.message.dtac_message_prepaid_10 import DTAC_MESSAGE_PREPAID_10
+
+
 app = FastAPI(
     title="Mock Response From APIGW",
     version="1.0.0",
@@ -100,7 +116,6 @@ async def list_summary(id: str, request: Request, response: Response):
             elif byCycle =="20251011":
                 return SUMMARY_DTAC_POSTPAID_10
             
-
     else:
         if paymentMethod =="0":
             return SUMMARY_TRUE_DATA_PREPAID
@@ -117,6 +132,7 @@ async def list_allusage(request: Request, response: Response):
     cycleInstanse = query_dict.get("cycleInstanse")
     usageType = query_dict.get("usageType")
     serviceType = query_dict.get("serviceType")
+    startDateTime = query_dict.get("startDateTime")
 
     if channel == "True": 
         if serviceType == "CALLING":
@@ -157,32 +173,65 @@ async def list_allusage(request: Request, response: Response):
         
     else:
         response.headers["X-Total-Count"] = "3"
-        if usageType=="7":
-            if usageDate == "20250711":
-                return DTAC_VOICE_POSTPAID_7
-            elif usageDate == "20250811":
-                return DTAC_VOICE_POSTPAID_8
-            elif usageDate == "20250911":
-                return DTAC_VOICE_POSTPAID_9
-            elif usageDate == "20251011":
-                return DTAC_VOICE_POSTPAID_10
+        if startDateTime != None:
+            dt = datetime.fromisoformat(startDateTime)
+            if usageType=="7":
+                if dt.month == 7:
+                    return DTAC_VOICE_PREPAID_7
+                elif dt.month == 8:
+                    return DTAC_VOICE_PREPAID_8
+                elif dt.month == 9:
+                    return DTAC_VOICE_PREPAID_9
+                elif dt.month == 10:
+                    return DTAC_VOICE_PREPAID_10
+                
+            elif usageType=="2":
+                if dt.month == 7:
+                    return DTAC_DATA_PREPAID_7
+                elif dt.month == 8:
+                    return DTAC_DATA_PREPAID_8
+                elif dt.month == 9:
+                    return DTAC_DATA_PREPAID_9
+                elif dt.month == 10:
+                    return DTAC_DATA_PREPAID_10
+                
+            elif usageType=="5,9":
+                if dt.month == 7:
+                    return DTAC_MESSAGE_PREPAID_7
+                elif dt.month == 8:
+                    return DTAC_MESSAGE_PREPAID_8
+                elif dt.month == 9:
+                    return DTAC_MESSAGE_PREPAID_9
+                elif dt.month == 10:
+                    return DTAC_MESSAGE_PREPAID_10
+                
+        else:
+            if usageType=="7":
+                if usageDate == "20250711":
+                    return DTAC_VOICE_POSTPAID_7
+                elif usageDate == "20250811":
+                    return DTAC_VOICE_POSTPAID_8
+                elif usageDate == "20250911":
+                    return DTAC_VOICE_POSTPAID_9
+                elif usageDate == "20251011":
+                    return DTAC_VOICE_POSTPAID_10
             
-        elif usageType=="2":
-            if usageDate == "20250711":
-                return DTAC_DATA_POSTPAID_7
-            elif usageDate == "20250811":
-                return DTAC_DATA_POSTPAID_8
-            elif usageDate == "20250911":
-                return DTAC_DATA_POSTPAID_9
-            elif usageDate == "20251011":
-                return DTAC_DATA_POSTPAID_10
+            elif usageType=="2":
+                if usageDate == "20250711":
+                    return DTAC_DATA_POSTPAID_7
+                elif usageDate == "20250811":
+                    return DTAC_DATA_POSTPAID_8
+                elif usageDate == "20250911":
+                    return DTAC_DATA_POSTPAID_9
+                elif usageDate == "20251011":
+                    return DTAC_DATA_POSTPAID_10
         
-        elif usageType=="5,9":
-            if usageDate == "20250711":
-                return DTAC_MESSAGE_POSTPAID_7
-            elif usageDate == "20250811":
-                return DTAC_MESSAGE_POSTPAID_8
-            elif usageDate == "20250911":
-                return DTAC_MESSAGE_POSTPAID_9
-            elif usageDate == "20251011":
-                return DTAC_MESSAGE_POSTPAID_10
+            elif usageType=="5,9":
+                if usageDate == "20250711":
+                    return DTAC_MESSAGE_POSTPAID_7
+                elif usageDate == "20250811":
+                    return DTAC_MESSAGE_POSTPAID_8
+                elif usageDate == "20250911":
+                    return DTAC_MESSAGE_POSTPAID_9
+                elif usageDate == "20251011":
+                    return DTAC_MESSAGE_POSTPAID_10

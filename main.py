@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request, Response
+from fastapi.responses import JSONResponse
 from datetime import datetime
 
 from response.usage_history.allusage.true.voice.true_voice_postpaid_7 import TRUE_VOICE_POSTPAID_7 
@@ -218,6 +219,15 @@ async def list_allusage(request: Request, response: Response):
             nextOffset = query_dict.get("dcb.nextOffset")
             dt = datetime.fromisoformat(startDateTime)
             month = dt.month
+
+            return JSONResponse(
+                status_code=400,
+                    content={
+                    "code": "400.198.3001",
+                    "description": "startDateTime is required for DCB usage",
+                    "timestamp": "2025-11-07T17:11:39.213"
+                }
+            )
 
             if usageDate is not None:
                 base_resp = (

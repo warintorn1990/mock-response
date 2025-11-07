@@ -186,6 +186,7 @@ async def list_allusage(request: Request, response: Response):
     startDateTime = query_dict.get("startDateTime")
     limit = query_dict.get("limit")
     nextOffset = query_dict.get("dcb.nextOffset")
+    relatedPartyType = query_dict.get("relatedParty.type")
 
     if channel == "True": 
         if serviceType == "CALLING":
@@ -219,17 +220,7 @@ async def list_allusage(request: Request, response: Response):
             nextOffset = query_dict.get("dcb.nextOffset")
             dt = datetime.fromisoformat(startDateTime)
             month = dt.month
-
-            return JSONResponse(
-                status_code=400,
-                    content={
-                    "code": "400.198.3001",
-                    "description": "startDateTime is required for DCB usage",
-                    "timestamp": "2025-11-07T17:11:39.213"
-                }
-            )
-
-            if usageDate is not None:
+            if relatedPartyType == "1":
                 base_resp = (
                     TRUE_VAS_POSTPAID_7 if month == 7 else
                     TRUE_VAS_POSTPAID_8 if month == 8 else
@@ -237,21 +228,20 @@ async def list_allusage(request: Request, response: Response):
                     TRUE_VAS_POSTPAID_10 if month == 10 else
                     TRUE_VAS_POSTPAID_11
                 )
-            else:
+            elif relatedPartyType == "0":
                 base_resp = (
                     TRUE_VAS_PREPAID_7 if month == 7 else
                     TRUE_VAS_PREPAID_8 if month == 8 else
                     TRUE_VAS_PREPAID_9 if month == 9 else
                     TRUE_VAS_PREPAID_10 if month == 10 else
                     TRUE_VAS_PREPAID_11
-            )
+                )
             paged, total, has_more, next_id = paginate_usage(base_resp, limit, nextOffset)
             response.headers["X-Total-Count"] = str(total)
             response.headers["X-Limit"] = str(limit or 1)
             response.headers["X-Has-More"] = "true" if has_more else "false"
             response.headers["X-Next-Offset"] = next_id
             return paged
-
         
     else:
         response.headers["X-Total-Count"] = "3"

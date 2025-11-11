@@ -187,20 +187,27 @@ async def list_allusage(request: Request, response: Response):
     limit = query_dict.get("limit")
     nextOffset = query_dict.get("dcb.nextOffset")
     relatedPartyType = query_dict.get("relatedParty.type")
+    pageNumber = query_dict.get("pageNumber")
 
     if channel == "True": 
         if serviceType == "CALLING":
             response.headers["X-Total-Count"] = "10"
-            if cycleInstanse == "7":
-                return TRUE_VOICE_POSTPAID_7
-            if cycleInstanse == "8":
-                return TRUE_VOICE_POSTPAID_8
-            if cycleInstanse == "9":
-                return TRUE_VOICE_POSTPAID_9
-            if cycleInstanse == "10":
-                return TRUE_VOICE_POSTPAID_10
-            if cycleInstanse == "11":
-                return TRUE_VOICE_POSTPAID_11
+            if pageNumber == "4":
+                return JSONResponse(
+                    status_code=400,
+                    content={"code": "400.198.3001", "description": "", "timestamp": ""}
+                )
+            else:
+                if cycleInstanse == "7":
+                    return TRUE_VOICE_POSTPAID_7
+                if cycleInstanse == "8":
+                    return TRUE_VOICE_POSTPAID_8
+                if cycleInstanse == "9":
+                    return TRUE_VOICE_POSTPAID_9
+                if cycleInstanse == "10":
+                    return TRUE_VOICE_POSTPAID_10
+                if cycleInstanse == "11":
+                    return TRUE_VOICE_POSTPAID_11
             
         elif serviceType == "SMS":
             response.headers["X-Total-Count"] = "11"
